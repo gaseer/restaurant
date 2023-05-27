@@ -2,6 +2,129 @@
 <html lang="en">
 
 <head>
+    <script src="your-script.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
+  <script src="http://localhost:8080/your-script.js"></script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+    const firebaseConfig = {
+  apiKey: "AIzaSyCsnP_IoAoOInL6YOgCqyH4rlbgtw7kEZ0",
+  authDomain: "restaurant-web-admin-b0fb8.firebaseapp.com",
+  projectId: "restaurant-web-admin-b0fb8",
+  storageBucket: "restaurant-web-admin-b0fb8.appspot.com",
+  messagingSenderId: "766755536649",
+  appId: "1:766755536649:web:22b86fcf72be1076691dd8"
+};
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Retrieve and display data from Firestore
+    const imagesRef = collection(db, "images");
+    
+    async function fetchAndDisplayData() {
+        const querySnapshot = await getDocs(imagesRef);
+        const dishContainer = document.getElementById("dishContainer");
+
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+
+            const dishBox = document.createElement("div");
+            dishBox.className = `col-lg-4 col-sm-6 dish-box-wp ${data.category}`;
+            dishBox.setAttribute("data-cat", data.category);
+
+            const dishInner = document.createElement("div");
+            dishInner.className = "dish-box text-center";
+
+            const distImg = document.createElement("div");
+            distImg.className = "dist-img";
+
+            const imageElement = document.createElement("img");
+            imageElement.src = data.imageUrl;
+            distImg.appendChild(imageElement);
+
+            const dishRating = document.createElement("div");
+            dishRating.className = "dish-rating";
+            dishRating.innerHTML = `5 <i class="uil uil-star"></i>`;
+
+            const dishTitle = document.createElement("div");
+            dishTitle.className = "dish-title";
+
+            const titleElement = document.createElement("h3");
+            titleElement.className = "h3-title";
+            titleElement.textContent = data.title;
+
+            const caloriesElement = document.createElement("p");
+            caloriesElement.textContent = `${data.calories} calories`;
+
+            dishTitle.appendChild(titleElement);
+            dishTitle.appendChild(caloriesElement);
+
+            const dishInfo = document.createElement("div");
+            dishInfo.className = "dish-info";
+
+            const ul = document.createElement("ul");
+
+            const typeLi = document.createElement("li");
+            const typeP = document.createElement("p");
+            typeP.textContent = "Type";
+            const typeB = document.createElement("b");
+            typeB.textContent = data.type;
+            typeLi.appendChild(typeP);
+            typeLi.appendChild(typeB);
+
+            const personsLi = document.createElement("li");
+            const personsP = document.createElement("p");
+            personsP.textContent = "Persons";
+            const personsB = document.createElement("b");
+            personsB.textContent = data.persons;
+            personsLi.appendChild(personsP);
+            personsLi.appendChild(personsB);
+
+            ul.appendChild(typeLi);
+            ul.appendChild(personsLi);
+            dishInfo.appendChild(ul);
+
+            const distBottomRow = document.createElement("div");
+            distBottomRow.className = "dist-bottom-row";
+
+            const ul2 = document.createElement("ul");
+
+            const priceLi = document.createElement("li");
+            const priceB = document.createElement("b");
+            priceB.textContent = `Rs. ${data.price}`;
+            priceLi.appendChild(priceB);
+
+            const buttonLi= document.createElement("li");
+const addButton = document.createElement("button");
+addButton.className = "dish-add-btn";
+const plusIcon = document.createElement("i");
+plusIcon.className = "uil uil-plus";
+addButton.appendChild(plusIcon);
+buttonLi.appendChild(addButton);
+
+ul2.appendChild(priceLi);
+        ul2.appendChild(buttonLi);
+        distBottomRow.appendChild(ul2);
+
+        dishInner.appendChild(distImg);
+        dishInner.appendChild(dishRating);
+        dishInner.appendChild(dishTitle);
+        dishInner.appendChild(dishInfo);
+        dishInner.appendChild(distBottomRow);
+
+        dishBox.appendChild(dishInner);
+        dishContainer.appendChild(dishBox);
+    });
+}
+
+fetchAndDisplayData();
+  </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,7 +207,7 @@
                                 <div class="banner-text">
                                     <h1 class="h1-title">
                                         Welcome to our
-                                        <span>India</span>
+                                        <span>Hubert</span>
                                         restaurant.
                                     </h1>
                                     <p>This is Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam eius
@@ -146,6 +269,8 @@
                             <div class="sec-title text-center mb-5">
                                 <p class="sec-sub-title mb-3">About Us</p>
                                 <h2 class="h2-title">Discover our <span>restaurant story</span></h2>
+                                <div class="dist-img">
+                                  </div>
                                 <div class="sec-title-shape mb-4">
                                     <img src="assets/images/title-shape.svg" alt="">
                                 </div>
@@ -219,46 +344,7 @@
                         </div>
                         <div class="menu-list-row">
                             <div class="row g-xxl-5 bydefault_show" id="menu-dish">
-                                <div class="col-lg-4 col-sm-6 dish-box-wp breakfast" data-cat="breakfast">
-                                    <div class="dish-box text-center">
-                                        <div class="dist-img">
-                                            <img src="assets/images/dish/1.png" alt="">
-                                        </div>
-                                        <div class="dish-rating">
-                                            5
-                                            <i class="uil uil-star"></i>
-                                        </div>
-                                        <div class="dish-title">
-                                            <h3 class="h3-title">Fresh Chicken Veggies</h3>
-                                            <p>120 calories</p>
-                                        </div>
-                                        <div class="dish-info">
-                                            <ul>
-                                                <li>
-                                                    <p>Type</p>
-                                                    <b>Non Veg</b>
-                                                </li>
-                                                <li>
-                                                    <p>Persons</p>
-                                                    <b>2</b>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="dist-bottom-row">
-                                            <ul>
-                                                <li>
-                                                    <b>Rs. 499</b>
-                                                </li>
-                                                <li>
-                                                    <button class="dish-add-btn">
-                                                        <i class="uil uil-plus"></i>
-                                                    </button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <div id="dishContainer" class="row"></div>
                                 <!-- 2 -->
                                 <div class="col-lg-4 col-sm-6 dish-box-wp breakfast" data-cat="breakfast">
                                     <div class="dish-box text-center">
