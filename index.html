@@ -54,7 +54,7 @@ const app = initializeApp(firebaseConfig);
             titleElement.textContent = data.title;
 
             const descriptionElement = document.createElement("p");
-            descriptionElement.textContent = data.description;
+            descriptionElement.textContent = `Ingredients : ${data.description}`;
 
             dishTitle.appendChild(titleElement);
             dishTitle.appendChild(descriptionElement);
@@ -215,7 +215,7 @@ const app = initializeApp(firebaseConfig);
                                 </div>
                             </div>
                         </div>
-                        <div class="menu-tab-wp">
+                        <!-- <div class="menu-tab-wp">
                             <div class="row">
                                 <div class="col-lg-12 m-auto">
                                     <div class="menu-tab text-center">
@@ -241,7 +241,7 @@ const app = initializeApp(firebaseConfig);
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="menu-list-row">
                             <div class="row g-xxl-5 bydefault_show" id="menu-dish">
                                 <div id="dishContainer" class="row">
