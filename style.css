@@ -762,18 +762,18 @@ p {
     display: inline-block !important;
 }
 
-.dish-box-wp {
+.dish-box-wp { 
     display: none;
 }
 
-.dish-box {
+.dish-box { 
     border-radius: 30px;
     background: linear-gradient(145deg, #ececec, #ffffff);
     box-shadow: 28px 28px 45px #d4d4d4, -28px -28px 45px #ffffff;
     display: flow-root;
     padding: 0 30px 40px;
     padding-top: 0;
-    margin: 130px 0 30px;
+    margin: 130px 0 50px;
     transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
 }
 
@@ -783,7 +783,7 @@ p {
 
 .dist-img {
     margin-top: -130px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 
 .dist-img img {
@@ -798,22 +798,22 @@ p {
 }
 
 .dish-title {
-    padding: 0 30px;
+    padding: 0 10px;
 }
 
 .dish-title .h3-title {
     text-transform: capitalize;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     color: #0d0d25;
     transition: 0.3s;
-    min-height: 76px;
+    min-height: 16px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .dish-title p {
@@ -867,7 +867,7 @@ p {
 }
 
 .dist-bottom-row ul li b {
-    font-size: 30px;
+    font-size: 10px;
 }
 
 .dish-add-btn {
@@ -1168,7 +1168,7 @@ p {
 }
 
 .testimonials-box-text .h3-title {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     text-transform: capitalize;
 }
 
@@ -1509,7 +1509,7 @@ p {
         margin-top: -110px;
     }
     .dist-bottom-row ul li b {
-        font-size: 28px;
+        font-size: 20px;
     }
     .sec-text {
         padding: 0;
@@ -1672,7 +1672,7 @@ p {
     .dish-title .h3-title {
         display: block;
         min-height: auto;
-        margin-bottom: 12px;
+        margin-bottom: 2px;
     }
     .menu-img {
         width: 180px;
@@ -1701,7 +1701,7 @@ p {
         width: auto;
     }
     .dist-img img {
-        width: 180px;
+        width: 150px;
     }
     .dist-img {
         margin-top: -80px;
@@ -1769,9 +1769,9 @@ p {
         justify-content: center;
     }
     .dish-box {
-        max-width: 340px;
-        margin: 80px auto 30px;
-        padding: 0 0 30px;
+        max-width: 350px;
+        margin: 60px auto 30px;
+        padding: 0 0 5px;
     }
     .blog-sec.section {
         padding-bottom: 0;
@@ -1835,7 +1835,7 @@ p {
         padding: 0 30px;
     }
     .team-box .h3-title {
-        min-height: 72px;
+        min-height: 55px;
         display: flex;
         align-items: center;
         text-align: center;
@@ -1848,3 +1848,4 @@ p {
         padding: 20px;
     }
 }
+
