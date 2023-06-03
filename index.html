@@ -19,14 +19,12 @@
   messagingSenderId: "766755536649",
   appId: "1:766755536649:web:22b86fcf72be1076691dd8"
 };
-    
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
     // Retrieve and display data from Firestore
     const imagesRef = collection(db, "images");
-    
+
     async function fetchAndDisplayData() {
         const querySnapshot = await getDocs(imagesRef);
         const dishContainer = document.getElementById("dishContainer");
@@ -48,10 +46,6 @@
             imageElement.src = data.imageUrl;
             distImg.appendChild(imageElement);
 
-            const dishRating = document.createElement("div");
-            dishRating.className = "dish-rating";
-            dishRating.innerHTML = `5 <i class="uil uil-star"></i>`;
-
             const dishTitle = document.createElement("div");
             dishTitle.className = "dish-title";
 
@@ -59,71 +53,42 @@
             titleElement.className = "h3-title";
             titleElement.textContent = data.title;
 
-            const caloriesElement = document.createElement("p");
-            caloriesElement.textContent = `${data.category} Cay`;
+            const descriptionElement = document.createElement("p");
+            descriptionElement.textContent = data.description;
 
             dishTitle.appendChild(titleElement);
-            dishTitle.appendChild(caloriesElement);
-
-            const dishInfo = document.createElement("div");
-            dishInfo.className = "dish-info";
-
-            const ul = document.createElement("ul");
-
-            const typeLi = document.createElement("li");
-            const typeP = document.createElement("p");
-            typeP.textContent = "Type";
-            const typeB = document.createElement("b");
-            typeB.textContent = data.type;
-            typeLi.appendChild(typeP);
-            typeLi.appendChild(typeB);
-
-            const personsLi = document.createElement("li");
-            const personsP = document.createElement("p");
-            personsP.textContent = `${data.category} Category` ;
-            const personsB = document.createElement("b");
-            personsB.textContent = data.persons;
-            personsLi.appendChild(personsP);
-            personsLi.appendChild(personsB);
-
-            ul.appendChild(typeLi);
-            ul.appendChild(personsLi);
-            dishInfo.appendChild(ul);
+            dishTitle.appendChild(descriptionElement);
 
             const distBottomRow = document.createElement("div");
             distBottomRow.className = "dist-bottom-row";
 
-            const ul2 = document.createElement("ul");
+            const ul = document.createElement("ul");
 
             const priceLi = document.createElement("li");
             const priceB = document.createElement("b");
             priceB.textContent = `$. ${data.price}`;
             priceLi.appendChild(priceB);
 
-            const buttonLi= document.createElement("li");
-const addButton = document.createElement("button");
-addButton.className = "dish-add-btn";
-const plusIcon = document.createElement("i");
-plusIcon.className = "uil uil-plus";
-addButton.appendChild(plusIcon);
-buttonLi.appendChild(addButton);
+            const breakfastLi = document.createElement("li");
+            const breakfastP = document.createElement("p");
+            breakfastP.textContent = `Type: ${data.category}`;
+            breakfastLi.appendChild(breakfastP);
 
-ul2.appendChild(priceLi);
-        ul2.appendChild(buttonLi);
-        distBottomRow.appendChild(ul2);
+            ul.appendChild(priceLi);
+            ul.appendChild(breakfastLi);
+            distBottomRow.appendChild(ul);
 
-        dishInner.appendChild(distImg);
-        dishInner.appendChild(dishRating);
-        dishInner.appendChild(dishTitle);
-        dishInner.appendChild(dishInfo);
-        dishInner.appendChild(distBottomRow);
+            dishInner.appendChild(distImg);
+            dishInner.appendChild(dishTitle);
+            dishInner.appendChild(distBottomRow);
 
-        dishBox.appendChild(dishInner);
-        dishContainer.appendChild(dishBox);
-    });
-}
+            dishBox.appendChild(dishInner);
+            dishContainer.appendChild(dishBox);
+        });
+    }
 
-fetchAndDisplayData();
+    fetchAndDisplayData();
+    
   </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -283,44 +248,32 @@ fetchAndDisplayData();
                                 </div>
                                 <!-- 2 -->
                                 <div class="col-lg-4 col-sm-6 dish-box-wp breakfast" data-cat="breakfast">
+                                    <div id="dishContainer"></div>
+                                </div>
+                                <!-- <div class="col-lg-4 col-sm-6 dish-box-wp breakfast" data-cat="breakfast">
                                     <div class="dish-box text-center">
                                         <div class="dist-img">
                                             <img src="assets/images/dish/2.png" alt="">
                                         </div>
-                                        <div class="dish-rating">
-                                            4.3
-                                            <i class="uil uil-star"></i>
-                                        </div>
+                                      
                                         <div class="dish-title">
                                             <h3 class="h3-title">Grilled Chicken</h3>
-                                            <p>80 calories</p>
+                                            <p>description</p>
                                         </div>
-                                        <div class="dish-info">
-                                            <ul>
-                                                <li>
-                                                    <p>Type</p>
-                                                    <b>Non Veg</b>
-                                                </li>
-                                                <li>
-                                                    <p>Persons</p>
-                                                    <b>1</b>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                       
                                         <div class="dist-bottom-row">
                                             <ul>
                                                 <li>
                                                     <b>Rs. 359</b>
                                                 </li>
                                                 <li>
-                                                    <button class="dish-add-btn">
-                                                        <i class="uil uil-plus"></i>
-                                                    </button>
+                                                    <p>Breakfast</p>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
+                                
                                 <!-- 3 -->
                                 <div class="col-lg-4 col-sm-6 dish-box-wp lunch" data-cat="lunch">
                                     <div class="dish-box text-center">
@@ -744,7 +697,7 @@ fetchAndDisplayData();
                     </div>
                 </div>
             </section>
-              <style>
+            <style>
                 .map-container {
                   position: relative;
                   overflow: hidden;
@@ -764,7 +717,6 @@ fetchAndDisplayData();
               <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6628.550370673988!2d151.12650559629515!3d-33.83101325355062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a5896f6eecad%3A0x3f344d9cbbfaf4f1!2sTango%20Charcoal%20Chicken!5e0!3m2!1sen!2sin!4v1685732975821!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
-
             <!-- footer starts  -->
             <footer class="site-footer" id="contact">
                 <div class="top-footer section">
