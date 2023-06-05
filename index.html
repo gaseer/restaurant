@@ -9,6 +9,13 @@
   <script src="http://localhost:8080/your-script.js"></script>
 
   <script type="module">
+       window.addEventListener('load', function() {
+      var preloader = document.getElementById('preloader');
+      setTimeout(function() {
+        preloader.style.display = 'none'; // Hide the preloader after 3 seconds
+      }, 2000);
+    });
+      
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
     import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
     const firebaseConfig = {
@@ -108,6 +115,10 @@ const app = initializeApp(firebaseConfig);
 </head>
 
 <body class="body-fixed">
+      <!-- Preloader for 2sec --> 
+    <div id="preloader" class="preloader">
+    <div class="preloader-inner"></div>
+  </div>
     <!-- start of header  -->
     <header class="site-header">
         <div class="container">
