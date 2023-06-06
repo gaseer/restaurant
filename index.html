@@ -2,6 +2,35 @@
 <html lang="en">
 
 <head>
+     <style>
+    /* CSS for the loading indicator */
+    .loading-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    
+    .loading-block {
+      width: 40px;
+      height: 40px;
+      background-color: #333;
+      animation: loading 1.5s infinite ease-in-out;
+    }
+    
+    @keyframes loading {
+      0% {
+        transform: translateY(-50px);
+      }
+      50% {
+        transform: translateY(50px);
+      }
+      100% {
+        transform: translateY(-50px);
+      }
+    }
+  </style>
+    
     <script src="your-script.js" type="module"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
@@ -33,12 +62,18 @@
     <!-- custom css  -->
     <link rel="stylesheet" href="style.css">
 </head>
-
+  <script>
+    // JavaScript to hide the loading indicator once the website is fully loaded
+    window.addEventListener('load', function() {
+      var loadingContainer = document.querySelector('.loading-container');
+      loadingContainer.style.display = 'none';
+    });
+  </script>
 <body class="body-fixed">
 
-    <div id="preloader" class="preloader">
-        <div class="preloader-inner"></div>
-      </div>
+    <div class="loading-container">
+    <div class="loading-block"></div>
+  </div>
     <!-- start of header  -->
     <header class="site-header">
         <div class="container">
@@ -103,10 +138,10 @@
                                 <div class="banner-text">
                                     <h1 class="h1-title">
                                         Welcome to our
-                                        <span>CHARCHOLE</span>
+                                        <span>TANGO</span>
                                         restaurant.
                                     </h1>
-                                    <p>This is Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam eius
+                                    <p>This is CHARCHOL Restauranipsum dolor sit amet, consectetur adipisicing elit. Numquam eius
                                         vel tempore consectetur nesciunt? Nam eius tenetur recusandae optio aperiam.</p>
                                     <div class="banner-btn mt-4">
                                         <a href="#menu" class="sec-btn">Check our Menu</a>
@@ -216,7 +251,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="sec-title text-center mb-5">
-                                    <p class="sec-sub-title mb-3">Book Table</p>
+                                    <p class="sec-sub-title mb-3">AVAILABILTY</p>
                                     <h2 class="h2-title">Opening Table</h2>
                                     <div class="sec-title-shape mb-4">
                                         <img src="assets/images/title-shape.svg" alt="">
