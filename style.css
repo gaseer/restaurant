@@ -66,7 +66,8 @@ font-family: 'Poppins', sans-serif; */
   
   .food-item {height: 130px;
     display: grid;
-    align-items: center;  grid-template-columns: 25% auto;
+    align-items: center;  
+    grid-template-columns: 25% auto;
     padding: 5px;
     border-radius: 15px;
     overflow: hidden;
@@ -114,7 +115,7 @@ font-family: 'Poppins', sans-serif; */
   }
   
   .line {
-    width: 40px;
+    width: 60px;
     height: 2px;
     background: #ff9505;
     margin-bottom: 2px;
@@ -1956,6 +1957,59 @@ p {
 }
 
 @media (max-width: 400px) {
+    .food-item {height: 130px;
+        display: grid;
+        align-items: center;  
+        grid-template-columns: 40% auto;
+        padding: 5px;
+        border-radius: 15px;
+        overflow: hidden;
+        background: #fff;
+        color: #000;
+        margin: .5rem 0;
+        box-shadow: 0 0 16px -4px rgba(0, 0, 0, 0.75);
+        animation: fadeIn 2s;
+      }
+
+      .food-name {
+        font-family: var(--Inter);
+        color: #ff9505;
+        font-weight: 500;
+        font-size: 14px;
+        text-transform: capitalize;
+      }
+      
+      .line {
+        width: 50px;
+        height: 2px;
+        background: #ff9505;
+        margin-bottom: 2px;
+      }
+      
+      .food-price {
+        padding:  0;
+        font-weight: 600;
+        font-size: 1rem;
+        opacity: 0.8;
+      }
+      
+      .category {
+        padding-top: 1px;
+        font-size: 0.6rem;
+        font-weight: 800;
+        font-family: var(--Inter);
+        margin-bottom: 0px;
+      }
+      
+      .category span {
+        font-weight: 500;
+      }
+
+     .food-items{height: 150px;
+      height: fit-content;
+      padding: 10px;
+        column-gap: 5rem;
+    }
     .container, .container-fluid {
         padding: 0 15px;
     }
@@ -2000,12 +2054,11 @@ p {
         gap: 2rem;
       }
 } */
-/* @media screen and (min-width: 400px){
-    /* .food-tems p{
-
+/* @media screen and (min-width: 200px){
+     .food-tems p{
         width: 50%;
-    } */
-    /* .food-items{height: 150px;
+    }
+     .food-items{height: 150px;
       height: fit-content;
       padding: 0px;
         column-gap: 2rem;
