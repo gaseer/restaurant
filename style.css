@@ -63,7 +63,9 @@ font-family: 'Poppins', sans-serif; */
 }.food-items {
     margin: 20px 0;
   }
-  
+    .food-item:hover {
+    transform: scale(1.03);
+    }
   .food-item {height: 130px;
     display: grid;
     align-items: center;  
