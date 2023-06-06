@@ -1878,6 +1878,20 @@ p {
 }
 
 @media (max-width: 575px) {
+    .menu-btn{
+        font-family: var(--Inter);
+        text-transform: uppercase;
+        font-size: .8rem;
+        font-weight: 600;
+        background: none;
+        border: none;
+        color: #ff9505;
+        display: block;
+        margin: 0 .1rem;
+        cursor: pointer;
+        outline: 0;
+        transition: opacity 0.4s ease-out;
+    }
     .container, .container-fluid {
         padding: 0 30px;
     }
@@ -1957,6 +1971,8 @@ p {
 }
 
 @media (max-width: 400px) {
+   
+ 
     .food-item {height: 130px;
         display: grid;
         align-items: center;  
