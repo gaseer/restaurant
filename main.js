@@ -1,6 +1,12 @@
+window.addEventListener('load', function() {
+    var preloader = document.getElementById('preloader');
+    setTimeout(function() {
+      preloader.style.display = 'none'; // Hide the preloader after 3 seconds
+    }, 2000);
+  });
+  
 $(document).ready(function ($) {
     "use strict";
-
 
     var book_table = new Swiper(".book-table-img-slider", {
         slidesPerView: 1,
