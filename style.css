@@ -2085,13 +2085,10 @@ p {
         gap: 2rem;
       }
 } */
-/* @media screen and (min-width: 200px){
-     .food-tems p{
-        width: 50%;
+
+@media screen and (min-width: 200px){
+    .active-btn{
+        color:black;
     }
-     .food-items{height: 150px;
-      height: fit-content;
-      padding: 0px;
-        column-gap: 2rem;
-    }
-} */
+}
+
