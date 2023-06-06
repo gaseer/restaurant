@@ -18,54 +18,55 @@
     async function fetchAndDisplayData() {
       const querySnapshot = await getDocs(imagesRef);
       const foodItemsContainer = document.getElementById("food-container");
-    
-      querySnapshot.forEach((doc) => {
+    querySnapshot.forEach((doc) => {
         const data = doc.data();
-    
+      
         const foodItem = document.createElement("div");
         foodItem.className = `food-item ${data.category}`;
-    
+      
         const foodImg = document.createElement("div");
         foodImg.className = "food-img";
-    
+      
         const imgElement = document.createElement("img");
         imgElement.src = data.imageUrl;
         imgElement.alt = "food image";
         foodImg.appendChild(imgElement);
-    
+      
         const foodContent = document.createElement("div");
         foodContent.className = "food-content";
-    
+      
         const foodName = document.createElement("h2");
         foodName.className = "food-name";
         foodName.textContent = data.title;
-    
+      
         const line = document.createElement("div");
         line.className = "line";
-    
+      
         const foodPrice = document.createElement("h3");
         foodPrice.className = "food-price";
         foodPrice.textContent = `$ ${data.price}`;
-    
+      
         const description = document.createElement("div");
-        description.textContent = data.description;
+        description.textContent = `Ingredients ${data.description}`;
+        description.style.fontWeight = "bold";
         description.style.fontSize = "12px";
         description.style.color = "#333";
-        // description.style.padding = "2px";
-    
+      
         const category = document.createElement("p");
         category.className = "category";
-        category.innerHTML = `Categorie:- <span>${data.category}</span>`;
-    
+        category.innerHTML = `Category: <span>${data.category}</span>`;
+      
         foodContent.appendChild(foodName);
         foodContent.appendChild(line);
         foodContent.appendChild(foodPrice);
         foodContent.appendChild(description);
         foodContent.appendChild(category);
-    
+      
         foodItem.appendChild(foodImg);
         foodItem.appendChild(foodContent);
-    
+      
+        // Find the container to append the food item
+        const foodItemsContainer = document.querySelector(".food-items");
         foodItemsContainer.appendChild(foodItem);
       });
     
