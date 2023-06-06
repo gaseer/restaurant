@@ -48,8 +48,7 @@
         foodPrice.textContent = `$ ${data.price}`;
     
         const description = document.createElement("div");
-        description.textContent = ${data.description};
-        
+        description.textContent = data.description;
         description.style.fontSize = "12px";
         description.style.color = "#333";
         // description.style.padding = "2px";
