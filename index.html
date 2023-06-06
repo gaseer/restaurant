@@ -1,49 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-     <style>
-    /* CSS for the loading indicator */
-    .loading-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    
-    .loading-block {
-      width: 40px;
-      height: 40px;
-      background-color: #333;
-      animation: loading 1.5s infinite ease-in-out;
-    }
-    
-    @keyframes loading {
-      0% {
-        transform: translateY(-50px);
-      }
-      50% {
-        transform: translateY(50px);
-      }
-      100% {
-        transform: translateY(-50px);
-      }
-    }
-  </style>
-    
+<head> 
     <script src="your-script.js" type="module"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
   <script src="http://localhost:8080/your-script.js"></script>
-    <script>
-        window.addEventListener('load', function() {
-    var preloader = document.getElementById('preloader');
-    setTimeout(function() {
-      preloader.style.display = 'none'; // Hide the preloader after 3 seconds
-    }, 2000);
-        });
-    </script>
   <script src="firebase/firebase.js" type="module">
   </script>
     <meta charset="UTF-8">
@@ -62,18 +25,7 @@
     <!-- custom css  -->
     <link rel="stylesheet" href="style.css">
 </head>
-  <script>
-    // JavaScript to hide the loading indicator once the website is fully loaded
-    window.addEventListener('load', function() {
-      var loadingContainer = document.querySelector('.loading-container');
-      loadingContainer.style.display = 'none';
-    });
-  </script>
 <body class="body-fixed">
-
-    <div class="loading-container">
-    <div class="loading-block"></div>
-  </div>
     <!-- start of header  -->
     <header class="site-header">
         <div class="container">
