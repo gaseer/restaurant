@@ -79,7 +79,17 @@ font-family: 'Poppins', sans-serif; */
     box-shadow: 0 0 16px -4px rgba(0, 0, 0, 0.75);
     animation: fadeIn 2s;
   }
-  
+  /* Media query for desktop view */
+@media (min-width: 768px) {
+    .food-items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        
+      }
+  }
+    
+
   @keyframes fadeIn {
     from {
       opacity: 0;
