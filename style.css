@@ -1836,6 +1836,9 @@ p {
 }
 
 @media (max-width: 767px) {
+    .active-btn{
+    color:black;
+}
     .banner-img-wp {
         height: 75vw;
         min-height: 60vw;
