@@ -8,94 +8,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
   <script src="http://localhost:8080/your-script.js"></script>
 
-  <script type="module">
-       window.addEventListener('load', function() {
-      var preloader = document.getElementById('preloader');
-      setTimeout(function() {
-        preloader.style.display = 'none'; // Hide the preloader after 3 seconds
-      }, 2000);
-    });
-      
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
-    const firebaseConfig = {
-  apiKey: "AIzaSyCsnP_IoAoOInL6YOgCqyH4rlbgtw7kEZ0",
-  authDomain: "restaurant-web-admin-b0fb8.firebaseapp.com",
-  projectId: "restaurant-web-admin-b0fb8",
-  storageBucket: "restaurant-web-admin-b0fb8.appspot.com",
-  messagingSenderId: "766755536649",
-  appId: "1:766755536649:web:22b86fcf72be1076691dd8"
-};
-const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    // Retrieve and display data from Firestore
-    const imagesRef = collection(db, "images");
-
-    async function fetchAndDisplayData() {
-        const querySnapshot = await getDocs(imagesRef);
-        const dishContainer = document.getElementById("dishContainer");
-
-        querySnapshot.forEach((doc) => {
-            const data = doc.data();
-
-            const dishBox = document.createElement("div");
-            dishBox.className = `col-lg-4 col-sm-6 dish-box-wp ${data.category}`;
-            dishBox.setAttribute("data-cat", data.category);
-
-            const dishInner = document.createElement("div");
-            dishInner.className = "dish-box text-center";
-
-            const distImg = document.createElement("div");
-            distImg.className = "dist-img";
-
-            const imageElement = document.createElement("img");
-            imageElement.src = data.imageUrl;
-            distImg.appendChild(imageElement);
-
-            const dishTitle = document.createElement("div");
-            dishTitle.className = "dish-title";
-
-            const titleElement = document.createElement("h3");
-            titleElement.className = "h3-title";
-            titleElement.textContent = data.title;
-
-            const descriptionElement = document.createElement("p");
-            descriptionElement.textContent = `Ingredients : ${data.description}`;
-
-            dishTitle.appendChild(titleElement);
-            dishTitle.appendChild(descriptionElement);
-
-            const distBottomRow = document.createElement("div");
-            distBottomRow.className = "dist-bottom-row";
-
-            const ul = document.createElement("ul");
-
-            const priceLi = document.createElement("li");
-            const priceB = document.createElement("b");
-            priceB.textContent = `$. ${data.price}`;
-            priceLi.appendChild(priceB);
-
-            const breakfastLi = document.createElement("li");
-            const breakfastP = document.createElement("p");
-            breakfastP.textContent = `Type: ${data.category}`;
-            breakfastLi.appendChild(breakfastP);
-
-            ul.appendChild(priceLi);
-            ul.appendChild(breakfastLi);
-            distBottomRow.appendChild(ul);
-
-            dishInner.appendChild(distImg);
-            dishInner.appendChild(dishTitle);
-            dishInner.appendChild(distBottomRow);
-
-            dishBox.appendChild(dishInner);
-            dishContainer.appendChild(dishBox);
-        });
-    }
-
-    fetchAndDisplayData();
-    
+  <script src="firebase/firebase.js" type="module">
   </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -115,10 +28,10 @@ const app = initializeApp(firebaseConfig);
 </head>
 
 <body class="body-fixed">
-      <!-- Preloader for 2sec --> 
+
     <div id="preloader" class="preloader">
-    <div class="preloader-inner"></div>
-  </div>
+        <div class="preloader-inner"></div>
+      </div>
     <!-- start of header  -->
     <header class="site-header">
         <div class="container">
@@ -183,11 +96,11 @@ const app = initializeApp(firebaseConfig);
                                 <div class="banner-text">
                                     <h1 class="h1-title">
                                         Welcome to our
-                                        <span>TANGO</span>
+                                        <span>CHARCHOLE</span>
                                         restaurant.
                                     </h1>
-                                    <p>This is a seafood restaurant situated in Deyka, Sydney. You can get into the best delicious things 
-                                        in downtown here, with rich labour consideration.</p>
+                                    <p>This is Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam eius
+                                        vel tempore consectetur nesciunt? Nam eius tenetur recusandae optio aperiam.</p>
                                     <div class="banner-btn mt-4">
                                         <a href="#menu" class="sec-btn">Check our Menu</a>
                                     </div>
@@ -211,6 +124,11 @@ const app = initializeApp(firebaseConfig);
                 </div>
             </section>
 
+            <!-- <section class = "menu">
+                
+            </section> -->
+
+
             <section style="background-image: url(assets/images/menu-bg.png);"
                 class="our-menu section bg-light repeat-img" id="menu">
                 <div class="sec-wp">
@@ -224,6 +142,18 @@ const app = initializeApp(firebaseConfig);
                                         <img src="assets/images/title-shape.svg" alt="">
                                     </div>
                                 </div>
+                            </div>
+                            <div class = "menu-container">
+                                <div class = "menu-btns">
+                                    <button type = "button" class = "menu-btn active-btn" id = "allItems">All items</button>
+                                    <button type = "button" class = "menu-btn" id = "Dinner">Dinner</button>
+                                    <button type = "button" class = "menu-btn" id = "Breakfast">Breakfast</button>
+                                    <button type = "button" class = "menu-btn" id = "Lunch">Lunch</button>
+                                  </div>
+                            <div class = "food-items">
+                                  <div id="food-container"></div>
+                            </div>
+            
                             </div>
                         </div>
                         <!-- <div class="menu-tab-wp">
@@ -253,13 +183,14 @@ const app = initializeApp(firebaseConfig);
                                 </div>
                             </div>
                         </div> -->
-                        <div class="menu-list-row">
-                            <div class="row g-xxl-5 bydefault_show" id="menu-dish">
-                                <div id="dishContainer" class="row">
-                                </div>
-             
-                            </div>
-                        </div>
+                        <!-- <div class = "menu-btns">
+                            <button type = "button" class = "menu-btn active-btn" id = "featured">All Menu Items</button>
+                            <button type = "button" class = "menu-btn" id = "today-special">Burgers</button>
+                            <button type = "button" class = "menu-btn" id = "new-arrival">Chicken items</button>
+                          </div> -->
+                      
+                    
+
                     </div>
                 </div>
             </section>
@@ -278,7 +209,7 @@ const app = initializeApp(firebaseConfig);
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="sec-title text-center mb-5">
-                                    <p class="sec-sub-title mb-3">AVAILABILTY</p>
+                                    <p class="sec-sub-title mb-3">Book Table</p>
                                     <h2 class="h2-title">Opening Table</h2>
                                     <div class="sec-title-shape mb-4">
                                         <img src="assets/images/title-shape.svg" alt="">
@@ -621,7 +552,7 @@ const app = initializeApp(firebaseConfig);
                         <div class="row">
                             <div class="col-lg-12 text-center">
                                 <div class="copyright-text">
-                                    <p>Copyright &copy; 2021 <span class="name">TANGO</span>All Rights Reserved.
+                                    <p>Copyright &copy; 2021 <span class="name">TechieCoder.</span>All Rights Reserved.
                                     </p>
                                 </div>
                             </div>
