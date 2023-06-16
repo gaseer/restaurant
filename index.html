@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> 
+<head>
     <script src="your-script.js" type="module"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
   <script src="http://localhost:8080/your-script.js"></script>
+
   <script src="firebase/firebase.js" type="module">
   </script>
     <meta charset="UTF-8">
@@ -25,7 +26,12 @@
     <!-- custom css  -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="body-fixed">
+
+    <div id="preloader" class="preloader">
+        <div class="preloader-inner"></div>
+      </div>
     <!-- start of header  -->
     <header class="site-header">
         <div class="container">
@@ -90,10 +96,10 @@
                                 <div class="banner-text">
                                     <h1 class="h1-title">
                                         Welcome to our
-                                        <span>TANGO</span>
+                                        <span>CHARCHOLE</span>
                                         restaurant.
                                     </h1>
-                                    <p>This is CHARCHOL Restauranipsum dolor sit amet, consectetur adipisicing elit. Numquam eius
+                                    <p>This is Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam eius
                                         vel tempore consectetur nesciunt? Nam eius tenetur recusandae optio aperiam.</p>
                                     <div class="banner-btn mt-4">
                                         <a href="#menu" class="sec-btn">Check our Menu</a>
@@ -136,14 +142,29 @@
                                         <img src="assets/images/title-shape.svg" alt="">
                                     </div>
                                 </div>
+                
                             </div>
+                           <style>
+                            .menu-btns {
+                            height: 200px; /* Set a fixed height for the container */
+                            overflow-y: scroll; /* Enable vertical scrolling */
+                            }
+
+                            .menu-btn {
+                            width: 100%; /* Make the buttons occupy the full width of the container */
+                            padding: 10px; /* Add some padding for better visibility */
+                            }
+                            </style>
                             <div class = "menu-container">
                                 <div class = "menu-btns">
                                     <button type = "button" class = "menu-btn active-btn" id = "allItems">All items</button>
-                                    <button type = "button" class = "menu-btn" id = "Dinner">Burgers</button>
-                                    <button type = "button" class = "menu-btn" id = "Breakfast">Chicken</button>
-                                    <button type = "button" class = "menu-btn" id = "Lunch">Other</button>
-                                  </div>
+                                    <button type = "button" class = "menu-btn" id = "CHARCOALSKEWERS">Charcol Skewers</button>
+                                    <button type = "button" class = "menu-btn" id = "CHARCOAL CHICKEN">Charcol Chiken Meals</button>
+                                    <button type = "button" class = "menu-btn" id = "CHARCOAL ROLLS">Charcol ROlls/Burgres</button>
+                                    <button type = "button" class = "menu-btn" id = "SALADS/DIPS/CHIPS/BREAD">SALADS/DIPS Chips/Bread</button>
+                                    <button type = "button" class = "menu-btn" id = "FALFEEL">Falfeel</button>
+  
+                                </div>
                             <div class = "food-items">
                                   <div id="food-container"></div>
                             </div>
@@ -203,7 +224,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="sec-title text-center mb-5">
-                                    <p class="sec-sub-title mb-3">AVAILABILTY</p>
+                                    <p class="sec-sub-title mb-3">Book Table</p>
                                     <h2 class="h2-title">Opening Table</h2>
                                     <div class="sec-title-shape mb-4">
                                         <img src="assets/images/title-shape.svg" alt="">
@@ -222,9 +243,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="call-now text-center">
-                                      <a href="tel:+91-9200920092">
                                         <i class="uil uil-phone"></i>
-                                      </a>
                                         <a href="tel:+91-8866998866">+91 - 8866998866</a>
                                     </div>
                                 </div>
