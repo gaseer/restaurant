@@ -18,20 +18,26 @@
     async function fetchAndDisplayData() {
       const querySnapshot = await getDocs(imagesRef);
       const foodItemsContainer = document.getElementById("food-container");
-    querySnapshot.forEach((doc) => {
+      
+      querySnapshot.forEach((doc) => {
         const data = doc.data();
       
         const foodItem = document.createElement("div");
-        foodItem.className = `food-item ${data.category}`;
-      
+        foodItem.className = `food-item ${data.category.replace(' ', '')}`;
+      console.log(data.category);
         const foodImg = document.createElement("div");
         foodImg.className = "food-img";
       
         const imgElement = document.createElement("img");
         imgElement.src = data.imageUrl;
         imgElement.alt = "food image";
+        
+        imgElement.addEventListener("click", () => {
+          showEnlargedImage(data.imageUrl);
+        });
+    
         foodImg.appendChild(imgElement);
-      
+
         const foodContent = document.createElement("div");
         foodContent.className = "food-content";
       
@@ -105,14 +111,17 @@
         }
         }
         
+       
+function showEnlargedImage(imageUrl) {
+  const enlargedImage = document.getElementById("enlarged-image-img");
+  enlargedImage.src = imageUrl;
+
+  const enlargedImageContainer = document.getElementById("enlarged-im");
+  enlargedImageContainer.style.display = "flex";
+
+  setTimeout(() => {
+    enlargedImageContainer.style.display = "none";
+  }, 3000);
+}
+        
         fetchAndDisplayData();
-
-
-
-
-
-
-
-
-
-
