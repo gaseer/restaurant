@@ -8,6 +8,15 @@
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
   <script src="http://localhost:8080/your-script.js"></script>
 
+
+  <link rel="stylesheet" href="path/to/lightbox.css">
+<script src="path/to/lightbox.js"></script>
+<script>
+  lightbox.option({
+    resizeDuration: 200,
+    wrapAround: true
+  });
+</script>
   <script src="firebase/firebase.js" type="module">
   </script>
     <meta charset="UTF-8">
@@ -52,7 +61,7 @@
                                 <li><a href="#about">About</a></li>
                                 <li><a href="#menu">Menu</a></li>
                                 <li><a href="#gallery">Gallery</a></li>
-                                <li><a href="#blog">Blog</a></li>
+                                <li><a href="#blog">Catering</a></li>
                                 <li><a href="#contact">Contact</a></li>
                             </ul>
                         </nav>
@@ -144,17 +153,17 @@
                                 </div>
                 
                             </div>
-                           <style>
-                            .menu-btns {
-                            height: 200px; /* Set a fixed height for the container */
-                            overflow-y: scroll; /* Enable vertical scrolling */
-                            }
+                           <!-- <style>
+   .menu-btns {
+  height: 200px; /* Set a fixed height for the container */
+  overflow-y: scroll; /* Enable vertical scrolling */
+}
 
-                            .menu-btn {
-                            width: 100%; /* Make the buttons occupy the full width of the container */
-                            padding: 10px; /* Add some padding for better visibility */
-                            }
-                            </style>
+.menu-btn {
+  width: 100%; /* Make the buttons occupy the full width of the container */
+  padding: 10px; /* Add some padding for better visibility */
+}
+</style> -->
                             <div class = "menu-container">
                                 <div class = "menu-btns">
                                     <button type = "button" class = "menu-btn active-btn" id = "allItems">All items</button>
@@ -165,9 +174,53 @@
                                     <button type = "button" class = "menu-btn" id = "FALFEEL">Falfeel</button>
   
                                 </div>
+                                <style>
+                                .overlay {
+                                    position: fixed;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: rgba(0, 0, 0, 0.7);
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    z-index: 9999;
+                                    }
+
+                                    .image-container {
+                                        height: 350px;
+                                    background-color: #fff;
+                                    padding: 20px;
+                                    border-radius: 5px;
+                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                                    }
+
+                                    .overlay img {
+                                    max-width: 100%;
+                                    max-height: 100%;
+                                    }
+
+                                    .close-btn {
+                                    position: absolute;
+                                    top: 10px;
+                                    right: 10px;
+                                    padding: 15px;
+                                    background-color: rgba(255, 255, 255, 0.5);
+                                    color: #000;
+                                    border: none;
+                                    cursor: pointer;
+                                    font-size: 30px;
+                                    font-weight: bold;
+                                    border-radius: 50%;
+                                    }
+                                  </style>
+
+
                             <div class = "food-items">
                                   <div id="food-container"></div>
                             </div>
+                
             
                             </div>
                         </div>
@@ -260,30 +313,30 @@
                             <div class="col-lg-10 m-auto">
                                 <div class="book-table-img-slider" id="icon">
                                     <div class="swiper-wrapper">
-                                        <a href="assets/images/bt1.jpg" data-fancybox="table-slider"
+                                        <a href="assets/images/tango_dish/salad.jpg" data-fancybox="table-slider"
                                             class="book-table-img back-img swiper-slide"
-                                            style="background-image: url(assets/images/bt1.jpg)"></a>
-                                        <a href="assets/images/bt2.jpg" data-fancybox="table-slider"
+                                            style="background-image: url(assets/images/tango_dish/salad.jpg)"></a>
+                                        <a href="assets/images/tango_dish/menu1.jpeg" data-fancybox="table-slider"
                                             class="book-table-img back-img swiper-slide"
-                                            style="background-image: url(assets/images/bt2.jpg)"></a>
-                                        <a href="assets/images/bt3.jpg" data-fancybox="table-slider"
+                                            style="background-image: url(assets/images/tango_dish/menu1.jpeg)"></a>
+                                        <a href="assets/images/tango_dish/menu2.jpeg" data-fancybox="table-slider"
                                             class="book-table-img back-img swiper-slide"
-                                            style="background-image: url(assets/images/bt3.jpg)"></a>
-                                        <a href="assets/images/bt4.jpg" data-fancybox="table-slider"
+                                            style="background-image: url(assets/images/tango_dish/menu2.jpeg)"></a>
+                                        <a href="assets/images/tango_dish/menu3.jpg" data-fancybox="table-slider"
                                             class="book-table-img back-img swiper-slide"
-                                            style="background-image: url(assets/images/bt4.jpg)"></a>
-                                        <a href="assets/images/bt1.jpg" data-fancybox="table-slider"
+                                            style="background-image: url(assets/images/tango_dish/menu3.jpg)"></a>
+                                        <a href="assets/images/tango_dish/quarter chicken.jpg" data-fancybox="table-slider"
                                             class="book-table-img back-img swiper-slide"
-                                            style="background-image: url(assets/images/bt1.jpg)"></a>
-                                        <a href="assets/images/bt2.jpg" data-fancybox="table-slider"
+                                            style="background-image: url(assets/images/tango_dish/quarter\ chicken.jpg)"></a>
+                                        <a href="assets/images/tango_dish/falafel.jpg" data-fancybox="table-slider"
                                             class="book-table-img back-img swiper-slide"
-                                            style="background-image: url(assets/images/bt2.jpg)"></a>
-                                        <a href="assets/images/bt3.jpg" data-fancybox="table-slider"
+                                            style="background-image: url(assets/images/tango_dish/falafel.jpg)"></a>
+                                        <a href="assets/images/tango_dish/family meal.jpg" data-fancybox="table-slider"
                                             class="book-table-img back-img swiper-slide"
-                                            style="background-image: url(assets/images/bt3.jpg)"></a>
-                                        <a href="assets/images/bt4.jpg" data-fancybox="table-slider"
+                                            style="background-image: url(assets/images/tango_dish/family\ meal.jpg)"></a>
+                                        <a href="assets/images/tango_dish/dish.jpg" data-fancybox="table-slider"
                                             class="book-table-img back-img swiper-slide"
-                                            style="background-image: url(assets/images/bt4.jpg)"></a>
+                                            style="background-image: url(assets/images/tango_dish/dish.jpg)"></a>
                                     </div>
 
                                     <div class="swiper-button-wp">
@@ -465,6 +518,45 @@
                     </div>
                 </div>
             </section>
+
+
+            <div class="bg-pattern bg-light repeat-img"
+                style="background-image: url(assets/images/blog-pattern-bg.png);">
+                <section class="blog-sec section" id="blog">
+                    <div class="sec-wp">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="sec-title text-center mb-5">
+                                        <p class="sec-sub-title mb-3">HOT DEAL</p>
+                                        <h2 class="h2-title">CATERING MENU LIST</span></h2>
+                                        <div class="sec-title-shape mb-4">
+                                            <img src="assets/images/title-shape.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                
+                                    <div class="blog-box">
+                                        <div class="blog-img back-img"
+                                            style="background-image: url(assets/images/tango_dish/CatMenu.jpg);"></div>
+                                        <div class="blog-text">
+                                            <!-- <p class="blog-date">September.15.2021</p> -->
+                                            <a href="#" class="h4-title">ORDER THE COMBO FOR SPECIAL</a>
+                                            <p>We provide CHICKEN, MEAT, FALFEEL Catering Services with combo offers.
+                                                We provide CHICKEN, MEAT, FALFEEL Catering Services with combo offers</p>
+                                            <!-- <a href="#" class="sec-btn">BOOK NOW</a> -->
+                                        </div>
+                                    </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
             <style>
                 .map-container {
                   position: relative;
@@ -481,7 +573,17 @@
                   height: 100%;
                 }
               </style>
-              
+               <div class="row">
+                <div class="col-lg-12">
+                    <div class="sec-title text-center mb-5">
+                        <!-- <p class="sec-sub-title mb-3"></p> -->
+                        <h2 class="h2-title">OUR LOCATION</span></h2>
+                        <div class="sec-title-shape mb-4">
+                            <img src="assets/images/title-shape.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
               <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6628.550370673988!2d151.12650559629515!3d-33.83101325355062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a5896f6eecad%3A0x3f344d9cbbfaf4f1!2sTango%20Charcoal%20Chicken!5e0!3m2!1sen!2sin!4v1685732975821!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
@@ -567,7 +669,7 @@
                         <div class="row">
                             <div class="col-lg-12 text-center">
                                 <div class="copyright-text">
-                                    <p>Copyright &copy; 2021 <span class="name">TechieCoder.</span>All Rights Reserved.
+                                    <p>Copyright &copy; 2023 <span class="name">TANGO</span>All Rights Reserved.
                                     </p>
                                 </div>
                             </div>
