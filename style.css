@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 /* font-family: 'Playfair Display', serif;
-font-family: 'Poppins', sans-serif; */
+font-family: 'Poppins', sans-serif; */ 
 
 .menu{
     margin: 2rem 0;
@@ -60,24 +60,29 @@ font-family: 'Poppins', sans-serif; */
 }
 .active-btn{
     color:black;
-}.food-items {
-    margin: 20px 0;
+}
+.food-items {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    gap: 20px;
   }
-    .food-item:hover {
-    transform: scale(1.03);
-    }
-  .food-item {height: 130px;
+  
+  .food-item {
+    margin-top: 1rem;
+    height: 150px;
     display: grid;
-    align-items: center;  
+    align-items: center;
     grid-template-columns: 25% auto;
     padding: 5px;
     border-radius: 15px;
     overflow: hidden;
     background: #fff;
     color: #000;
-    margin: .5rem 0;
     box-shadow: 0 0 16px -4px rgba(0, 0, 0, 0.75);
     animation: fadeIn 2s;
+  }
+  .food-item:hover {
+    transform: scale(1.05);
   }
   /* Media query for desktop view */
 @media (min-width: 768px) {
@@ -85,11 +90,12 @@ font-family: 'Poppins', sans-serif; */
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        
+
       }
   }
-    
+  
 
+  
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -1127,6 +1133,7 @@ p {
 }
 
 .back-img {
+    height: fit-content;
     background-position: center;
     background-size: cover;
 }
@@ -1433,14 +1440,14 @@ p {
 
 .blog-img {
     width: 100%;
-    height: 280px;
-    border-radius: 30px;
-    margin-bottom: 20px;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .blog-box {
-    padding: 30px 25px;
-    border-radius: 30px;
+    padding: 1px 25px;
+    border-radius: 20px;
     background: linear-gradient(145deg, #ececec, #fdfdfd);
     box-shadow: 30px 30px 50px #dcdcdc, -30px -30px 50px #ffffff;
     transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
@@ -1606,6 +1613,7 @@ p {
 /* **************** responsiveness ***************** */
 
 @media (min-width: 2100px) {
+    
     .container {
         max-width: 1400px;
     }
@@ -1643,7 +1651,7 @@ p {
     }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1199px) {    
     .main-banner {
         padding: 200px 0;
     }
@@ -1684,7 +1692,8 @@ p {
         padding: 8px 20px 20px;
     }
     .blog-img {
-        height: 240px;
+       
+        height: 450px;
     }
     .newsletter-box-text {
         padding: 0;
@@ -1710,6 +1719,20 @@ p {
 }
 
 @media (max-width: 991px) {
+    .menu-btn{
+        font-family: var(--Inter);
+        text-transform: uppercase;
+        font-size: .9rem;
+        font-weight: 600;
+        background: none;
+        border: none;
+        color: #ff9505;
+        display: block;
+        margin: 0 .1rem;
+        cursor: pointer;
+        outline: 0;
+        transition: opacity 0.4s ease-out;
+    }
     .js-parallax-scene {
         display: none;
     }
@@ -1843,12 +1866,17 @@ p {
         position: relative;
         display: flex;
     }
+    .blog-img {
+       
+        height: 280px;
+    }
 }
 
 @media (max-width: 767px) {
-    .active-btn{
-    color:black;
-}
+    .blog-img {
+       
+        height: 180px;
+    }
     .banner-img-wp {
         height: 75vw;
         min-height: 60vw;
@@ -1893,10 +1921,63 @@ p {
 }
 
 @media (max-width: 575px) {
+    .food-item {height: 140px;
+        display: grid;
+        align-items: center;  
+        grid-template-columns: 35% auto;
+        padding: 4px;
+        border-radius: 15px;
+        overflow: hidden;
+        background: #fff;
+        color: #000;
+        margin: .6rem 0;
+        box-shadow: 0 0 16px -4px rgba(0, 0, 0, 0.75);
+        animation: fadeIn 2s;
+      }
+
+      .food-name {
+        font-family: var(--Inter);
+        color: #ff9505;
+        font-weight: 500;
+        font-size: 14px;
+        text-transform: capitalize;
+      }
+      
+      .line {
+        width: 50px;
+        height: 2px;
+        background: #ff9505;
+        margin-bottom: 2px;
+      }
+      
+      .food-price {
+        padding:  0;
+        font-weight: 600;
+        font-size: 1.2rem;
+        opacity: 0.8;
+      }
+      
+      .category {
+        padding-top: 1px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        font-family: var(--Inter);
+        margin-bottom: 0px;
+      }
+      
+      .category span {
+        font-weight: 500;
+      }
+
+     .food-items{height: 150px;
+      
+      padding: 10px;
+        column-gap: 5rem;
+    }
     .menu-btn{
         font-family: var(--Inter);
         text-transform: uppercase;
-        font-size: .8rem;
+        font-size: .7rem;
         font-weight: 600;
         background: none;
         border: none;
@@ -1980,24 +2061,27 @@ p {
 }
 
 @media (max-width: 480px) {
+    .active-btn{
+        color:black;
+    }
     .team-img {
         height: 330px;
     }
 }
 
-@media (max-width: 400px) {
-   
- 
-    .food-item {height: 130px;
+@media (max-width: 410px) {.active-btn{
+    color:black;
+}
+    .food-item {height: 150px;
         display: grid;
         align-items: center;  
         grid-template-columns: 40% auto;
-        padding: 5px;
+        padding: 4px;
         border-radius: 15px;
         overflow: hidden;
         background: #fff;
         color: #000;
-        margin: .5rem 0;
+        margin: .6rem 0;
         box-shadow: 0 0 16px -4px rgba(0, 0, 0, 0.75);
         animation: fadeIn 2s;
       }
@@ -2006,7 +2090,7 @@ p {
         font-family: var(--Inter);
         color: #ff9505;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 12px;
         text-transform: capitalize;
       }
       
@@ -2026,7 +2110,7 @@ p {
       
       .category {
         padding-top: 1px;
-        font-size: 0.6rem;
+        font-size: 0.7rem;
         font-weight: 800;
         font-family: var(--Inter);
         margin-bottom: 0px;
@@ -2037,7 +2121,7 @@ p {
       }
 
      .food-items{height: 150px;
-      height: fit-content;
+      
       padding: 10px;
         column-gap: 5rem;
     }
@@ -2085,10 +2169,16 @@ p {
         gap: 2rem;
       }
 } */
-
 @media screen and (min-width: 200px){
     .active-btn{
-        color:black;
+    color:black;
+}
+     .food-tems p{
+        width: 50%;
+    }
+     .food-items{height: 150px;
+      height: fit-content;
+      padding: 0px;
+        column-gap: 1rem;
     }
 }
-
