@@ -153,51 +153,53 @@
   
                                 </div>
                                 <style>
-                                .overlay {
-                                    position: fixed;
-                                    top: 0;
-                                    left: 0;
-                                    width: 100%;
-                                    height: 100%;
-                                    background-color: rgba(0, 0, 0, 0.7);
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    z-index: 9999;
+                                    .overlay {
+                                        position: fixed;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background-color: rgba(0, 0, 0, 0.7);
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        z-index: 9999;
                                     }
-
+                                
                                     .image-container {
                                         height: 350px;
-                                    background-color: #fff;
-                                    padding: 20px;
-                                    border-radius: 5px;
-                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                                        background-color: transparent;
+                                        padding: 10px;
+                                        border-radius: 5px;
+                                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                                        position: relative; /* Add this line */
                                     }
-
+                                
                                     .overlay img {
-                                    max-width: 100%;
-                                    max-height: 100%;
+                                        max-width: 100%;
+                                        max-height: 100%;
                                     }
-
+                                
                                     .close-btn {
-                                    position: absolute;
-                                    top: 10px;
-                                    right: 10px;
-                                    padding: 15px;
-                                    background-color: rgba(255, 255, 255, 0.5);
-                                    color: #000;
-                                    border: none;
-                                    cursor: pointer;
-                                    font-size: 30px;
-                                    font-weight: bold;
-                                    border-radius: 50%;
+                                        position: absolute;
+                                        top: 0; /* Change this line */
+                                        right: 0; /* Change this line */
+                                        transform: translate(50%, -50%); /* Add this line */
+                                        padding: 15px;
+                                        background-color: rgba(255, 255, 255, 0.5);
+                                        color: #000;
+                                        border: none;
+                                        cursor: pointer;
+                                        font-size: 30px;
+                                        font-weight: bold;
+                                        border-radius: 50%;
                                     }
-                                  </style>
-
-
-                            <div class = "food-items">
-                                  <div id="food-container"></div>
-                            </div>
+                                </style>
+                                
+                                <div class="food-items">
+                                    <div id="food-container"></div>
+                                </div>
+                                
                             </div>
                         </div>
 
@@ -238,8 +240,8 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="call-now text-center">
-                                        <i class="uil uil-phone"></i>
-                                        <a href="tel:+(02)98177960">+(02) - 98177960</a>
+                                        <a href="tel:+(02)98177960"><i class="uil uil-phone"></i>
+                                       +(02) - 98177960</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -479,26 +481,43 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <style>
+                                    .box {
+                                        max-width: 100%;
+                                        height: auto;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        margin-bottom: 50px;
+                                    }
+                                    
+                                    .box img {
+                                        max-width: 100%;
+                                        height: auto;
+                                    }
+                                </style>
+                                <div class="box">
+                                    <img src="assets/tango_dish/CatMenu.jpg" alt="Cat Menu">
+                                </div>
                                 
-                                    <div class="blog-box">
+                                    <!-- THis is better bOX with NICE EFFECT 
+                                        <div class="blog-box">
                                         <div class="blog-img back-img"
                                             style="background-image: url(assets/tango_dish/CatMenu.jpg);"></div>
                                         <div class="blog-text">
-                                            <!-- <p class="blog-date">September.15.2021</p> -->
+                                             <p class="blog-date">September.15.2021</p> 
                                             <a href="#" class="h4-title">ORDER THE COMBO FOR SPECIAL</a>
                                             <p>We provide CHICKEN, MEAT, FALFEEL Catering Services with combo offers.
                                                 We provide CHICKEN, MEAT, FALFEEL Catering Services with combo offers</p>
-                                            <!-- <a href="#" class="sec-btn">BOOK NOW</a> -->
+                                            <a href="#" class="sec-btn">BOOK NOW</a> 
                                         </div>
-                                    </div>
+                                    </div> -->
                                 
                                 
                             </div>
                         </div>
                     </div>
                 </section>
-
-
             <style>
                 .map-container {
                   position: relative;
