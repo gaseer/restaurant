@@ -126,7 +126,7 @@
       enlargedImg.alt = "Enlarged food image";
     
       imageContainer.appendChild(enlargedImg);
-      overlay.appendChild(closeBtn);
+      imageContainer.appendChild(closeBtn); // Move the close button inside the image container
       overlay.appendChild(imageContainer);
     
       document.body.appendChild(overlay);
