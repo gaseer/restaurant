@@ -1,3 +1,10 @@
+window.addEventListener('load', function () {
+    setTimeout(function () {
+      var preloader = document.getElementById('preloader');
+      preloader.classList.add('loaded');
+    }, 2000);
+  });
+
 $(document).ready(function ($) {
     "use strict";
 
