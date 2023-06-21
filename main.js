@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
     setTimeout(function () {
       var preloader = document.getElementById('preloader');
       preloader.classList.add('loaded');
-    }, 2000);
+    }, 1000);
   });
 
 $(document).ready(function ($) {
