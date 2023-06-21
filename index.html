@@ -4,12 +4,6 @@
 <head>
     <title>TANGO</title>
     <link rel="icon" href="assets/tango_dish/tango_logo.jpg" type="image/png">
-    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
-  <script src="http://localhost:8080/your-script.js"></script>
-  <script src="firebase/firebase.js" type="module">
-  </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,11 +21,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <script>
-    window.addEventListener('load', function () {
+   window.addEventListener('load', function () {
     setTimeout(function () {
       var preloader = document.getElementById('preloader');
       preloader.classList.add('loaded');
-    }, 300);
+    }, 500); 
   });
 </script>
 <body class="body-fixed">
@@ -631,5 +625,12 @@
     <script src="main.js"></script>
 
 </body>
+    
+  <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
+  <script src="http://localhost:8080/your-script.js"></script>
+  <script src="firebase/firebase.js" type="module">
+  </script>
 
 </html>
