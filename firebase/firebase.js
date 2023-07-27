@@ -111,7 +111,8 @@
         });
       }
     }
-
+    
+    fetchAndDisplayData();
 
 
     // Pass the additional arguments 'foodName', 'description', and 'price' to the showEnlargedImage function
