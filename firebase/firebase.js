@@ -19,6 +19,8 @@
     async function fetchAndDisplayData() {
       const querySnapshot = await getDocs(imagesRef);
       const foodItemsContainer = document.getElementById("food-container");
+
+      
     
       querySnapshot.forEach((doc) => {
         const data = doc.data();
@@ -35,7 +37,7 @@
         imgElement.alt = "food image";
     
         imgElement.addEventListener("click", () => {
-          showEnlargedImage(data.imageUrl);
+          showEnlargedImage(data.imageUrl, data.title, data.description, data.price);
         });
     
         foodImg.appendChild(imgElement);
@@ -69,11 +71,11 @@
         foodContent.appendChild(foodPrice);
         foodContent.appendChild(description);
         foodContent.appendChild(category);
-    
         foodItem.appendChild(foodImg);
         foodItem.appendChild(foodContent);
-    
         foodItemsContainer.appendChild(foodItem);
+
+
       });
     
       const menuBtns = document.querySelectorAll(".menu-btn");
@@ -110,32 +112,79 @@
       }
     }
 
-    function showEnlargedImage(imageUrl) {
-      const overlay = document.createElement("div");
-      overlay.className = "overlay";
+
+
+    // Pass the additional arguments 'foodName', 'description', and 'price' to the showEnlargedImage function
+function showEnlargedImage(imageUrl, foodName, description, price) {
+  const overlay = document.createElement("div");
+  overlay.className = "overlay";
+
+  const closeBtn = document.createElement("button");
+  closeBtn.innerHTML = "&times;";
+  closeBtn.className = "close-btn";
+
+  const imageContainer = document.createElement("div");
+  imageContainer.className = "image-container";
+
+  const enlargedImg = document.createElement("img");
+  enlargedImg.src = imageUrl;
+
+  // Create elements to display foodName, description, and price
+  const foodNameElement = document.createElement("h2");
+  foodNameElement.textContent = foodName;
+  foodNameElement.style.color = " #ff9505";
+
+  const descriptionElement = document.createElement("div");
+  descriptionElement.textContent = `Ingredients: ${description}`;
+
+  const priceElement = document.createElement("h3");
+  priceElement.textContent = `$ ${price}`;
+
+  // Add the elements to the imageContainer
+  imageContainer.appendChild(closeBtn); 
+  imageContainer.appendChild(enlargedImg);
+  imageContainer.appendChild(foodNameElement);
+  imageContainer.appendChild(descriptionElement);
+  imageContainer.appendChild(priceElement);
+// Move the close button inside the image container
+
+  overlay.appendChild(imageContainer);
+  document.body.appendChild(overlay);
+
+  closeBtn.addEventListener("click", () => {
+    document.body.removeChild(overlay);
+  });
+}
+
+
+    //the below function is to trigger the animation on scoll
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
     
-      const closeBtn = document.createElement("button");
-      closeBtn.innerHTML = "&times;"; // Cross icon HTML entity (X)
-      closeBtn.className = "close-btn";
-    
-      const imageContainer = document.createElement("div");
-      imageContainer.className = "image-container";
-    
-      const enlargedImg = document.createElement("img");
-      enlargedImg.src = imageUrl;
-      enlargedImg.alt = "Enlarged food image";
-    
-      imageContainer.appendChild(enlargedImg);
-      imageContainer.appendChild(closeBtn); // Move the close button inside the image container
-      overlay.appendChild(imageContainer);
-    
-      document.body.appendChild(overlay);
-    
-      closeBtn.addEventListener("click", () => {
-        document.body.removeChild(overlay);
+    // Function to handle the scroll event and apply the fade-in effect
+    function handleScroll() {
+      const foodImages = document.querySelectorAll(".food-img img");
+      foodImages.forEach((image) => {
+        if (isInViewport(image)) {
+          image.classList.add("fade-in");
+        }
       });
     }
     
-    fetchAndDisplayData();
-    
+    // Add the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+
+
+
+
+
+
 
