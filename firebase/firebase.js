@@ -14,7 +14,7 @@
     const db = getFirestore(app);
     
     // Retrieve and display data from Firestore
-    const imagesRef = collection(db, "images");
+    const imagesRef = collection(db, "dishes");
 
     async function fetchAndDisplayData() {
       const querySnapshot = await getDocs(imagesRef);
