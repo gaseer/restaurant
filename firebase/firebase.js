@@ -2,15 +2,6 @@
   // import { getFirestore, collection, getDocs} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
   import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
 
-// Assuming you have previously initialized Firebase using the Firebase SDK script in your HTML
-// For example:
-// <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
-// <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
-
-// Replace with your Firebase app instance if you've already initialized Firebase
-
-// Retrieve and display data from Firestore
-  
   const firebaseConfig = {
     apiKey: "AIzaSyCsnP_IoAoOInL6YOgCqyH4rlbgtw7kEZ0",
     authDomain: "restaurant-web-admin-b0fb8.firebaseapp.com",
@@ -61,7 +52,7 @@
     
         const foodName = document.createElement("h2");
         foodName.className = "food-name";
-        foodName.textContent = data.title;
+        foodName.innerHTML =  `<span> ${data.title} </span>` ;
     
         const line = document.createElement("div");
         line.className = "line";
@@ -71,13 +62,13 @@
         foodPrice.textContent = `$ ${data.price}`;
     
         const description = document.createElement("div");
-        description.textContent = `Ingredients ${data.description}`;
-        description.style.fontSize = "11px";
-        description.style.color = "#333";
+        description.className = 'food-ingredients';
+        description.innerHTML = `<span>Ingredients ${data.description}</span>`;
+       
     
         const category = document.createElement("p");
         category.className = "extra";
-        category.innerHTML = `<span>Extra: ${data.extraItem}</span>`;
+        category.innerHTML = `<span>${data.extraItem}</span>`;
     
         foodContent.appendChild(foodName);
         foodContent.appendChild(line);
@@ -125,7 +116,7 @@
       }
     }
 
-    
+
     // Add this code after creating your buttons and text-display element
 const falafelButton = document.getElementById("FALFEEL");
 const textDisplay = document.querySelector(".text-display");
