@@ -1,5 +1,16 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+  // import { getFirestore, collection, getDocs} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+  import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+// Assuming you have previously initialized Firebase using the Firebase SDK script in your HTML
+// For example:
+// <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+// <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
+
+// Replace with your Firebase app instance if you've already initialized Firebase
+
+// Retrieve and display data from Firestore
+  
   const firebaseConfig = {
     apiKey: "AIzaSyCsnP_IoAoOInL6YOgCqyH4rlbgtw7kEZ0",
     authDomain: "restaurant-web-admin-b0fb8.firebaseapp.com",
@@ -14,13 +25,16 @@
     const db = getFirestore(app);
     
     // Retrieve and display data from Firestore
-    const imagesRef = collection(db, "dishes");
+    const dishRef = collection(db, "dishes");
 
     async function fetchAndDisplayData() {
-      const querySnapshot = await getDocs(imagesRef);
-      const foodItemsContainer = document.getElementById("food-container");
 
-      
+    const q = query(collection(db, "dishes"), orderBy("orderBy"));
+
+    const querySnapshot = await getDocs(q);
+
+      // const querySnapshot = await getDocs(dishRef);
+      const foodItemsContainer = document.getElementById("food-container"); 
     
       querySnapshot.forEach((doc) => {
         const data = doc.data();
@@ -58,13 +72,12 @@
     
         const description = document.createElement("div");
         description.textContent = `Ingredients ${data.description}`;
-        description.style.fontWeight = "bold";
-        description.style.fontSize = "10px";
+        description.style.fontSize = "11px";
         description.style.color = "#333";
     
         const category = document.createElement("p");
-        category.className = "category";
-        category.innerHTML = `Category: <span>${data.category}</span>`;
+        category.className = "extra";
+        category.innerHTML = `<span>Extra: ${data.extraItem}</span>`;
     
         foodContent.appendChild(foodName);
         foodContent.appendChild(line);
@@ -111,8 +124,30 @@
         });
       }
     }
+
     
-    fetchAndDisplayData();
+    // Add this code after creating your buttons and text-display element
+const falafelButton = document.getElementById("FALFEEL");
+const textDisplay = document.querySelector(".text-display");
+
+// Function to show the text when Falafel button is clicked
+function showTextForFalafel() {
+    textDisplay.style.display = "block";
+}
+
+// Add a click event listener to the Falafel button
+falafelButton.addEventListener("click", showTextForFalafel);
+
+// Add click event listeners to all other buttons to hide the text
+const allButtonsExceptFalafel = document.querySelectorAll(".menu-btn:not(#FALFEEL)");
+
+allButtonsExceptFalafel.forEach((button) => {
+    button.addEventListener("click", () => {
+        textDisplay.style.display = "none";
+    });
+});
+
+
 
 
     // Pass the additional arguments 'foodName', 'description', and 'price' to the showEnlargedImage function
@@ -156,7 +191,8 @@ function showEnlargedImage(imageUrl, foodName, description, price) {
     document.body.removeChild(overlay);
   });
 }
-
+    
+    fetchAndDisplayData();
 
     //the below function is to trigger the animation on scoll
     function isInViewport(element) {
@@ -181,11 +217,3 @@ function showEnlargedImage(imageUrl, foodName, description, price) {
     
     // Add the scroll event listener
     window.addEventListener("scroll", handleScroll);
-
-
-
-
-
-
-
-
