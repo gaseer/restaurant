@@ -115,8 +115,7 @@ $(document).ready(function ($) {
     var parallaxInstance = new Parallax(scene);
 
 
-});
-
+});
 
 jQuery(window).on('load', function () {
     $('body').removeClass('body-fixed');
