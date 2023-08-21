@@ -1855,7 +1855,7 @@ p {
         display: none;
     }
     .main-banner {
-        padding: 45px 0 60px;
+        padding:70px 0 60px;
     }
     .h1-title {
         font-size: 50px;
@@ -2044,7 +2044,7 @@ p {
         margin-right: 50px;
         display: grid;
         align-items: center;  
-        grid-template-columns: 15% auto;
+        grid-template-columns: 30% auto;
         padding: 4px;
         border-radius: 15px;
         overflow: hidden;
