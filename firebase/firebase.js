@@ -2,6 +2,15 @@
   // import { getFirestore, collection, getDocs} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
   import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
 
+// Assuming you have previously initialized Firebase using the Firebase SDK script in your HTML
+// For example:
+// <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+// <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
+
+// Replace with your Firebase app instance if you've already initialized Firebase
+
+// Retrieve and display data from Firestore
+  
   const firebaseConfig = {
     apiKey: "AIzaSyCsnP_IoAoOInL6YOgCqyH4rlbgtw7kEZ0",
     authDomain: "restaurant-web-admin-b0fb8.firebaseapp.com",
@@ -66,7 +75,7 @@
         description.innerHTML = `<span>Ingredients ${data.description}</span>`;
        
     
-        const category = document.createElement("p");
+        const category = document.createElement("div");
         category.className = "extra";
         category.innerHTML = `<span>${data.extraItem}</span>`;
     
