@@ -21,7 +21,7 @@ font-family: 'Poppins', sans-serif; */
 .extra {
     color: orange;
     font-family: Arial, sans-serif; 
-font-size: small
+font-size: 12px
   }
 
 .menu{
@@ -91,7 +91,7 @@ font-size: small
   
   .food-item {
     margin-top: 2.8rem;
-    margin-left: 150px;
+    margin-left: 170px;
     margin-right: 150px;
     height: 170px;
     display: list-item;
@@ -2089,7 +2089,7 @@ p {
         font-weight: 500;
       }
 
-     .food-items{height: 150px;
+     .food-items{height: 170px;
       
       padding: 10px;
         column-gap: 5rem;
