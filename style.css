@@ -9,7 +9,6 @@ font-family: 'Poppins', sans-serif; */
     height: 100vh; /* Sets the height to 100% of the viewport height */
     width: 100%;   /* Sets the width to 100% */
 }
-
 .text-display{
     display: none;  
     font-family: Arial, sans-serif; 
