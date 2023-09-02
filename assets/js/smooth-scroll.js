@@ -84,15 +84,15 @@ function onResize() {
     }
 }
 
-jQuery(".filters").on("click", function() {
-    setTimeout(function() {
-        onScroll();
-        onResize();
-    }, 1000);
-});
+// jQuery(".filters").on("click", function() {
+//     setTimeout(function() {
+//         onScroll();
+//         onResize();
+//     }, 1000);
+// });
 
-document.querySelector(".filters li").addEventListener("click", onResize);
-document.querySelector(".filters li").addEventListener("click", onScroll);
+// document.querySelector(".filters li").addEventListener("click", onResize);
+// document.querySelector(".filters li").addEventListener("click", onScroll);
 
 // Scroll to top
 
