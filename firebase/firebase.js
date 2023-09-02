@@ -171,7 +171,7 @@ function showEnlargedImage(imageUrl, foodName, description, price) {
   foodNameElement.style.color = " #ff9505";
 
   const descriptionElement = document.createElement("div");
-  descriptionElement.textContent = `Ingredients: ${description}`;
+  descriptionElement.textContent = `${description}`;
 
   const priceElement = document.createElement("h3");
   priceElement.textContent = `$ ${price}`;
