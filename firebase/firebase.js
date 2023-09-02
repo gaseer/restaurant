@@ -72,7 +72,7 @@
     
         const description = document.createElement("div");
         description.className = 'food-ingredients';
-        description.innerHTML = `<span>Ingredients ${data.description}</span>`;
+        description.innerHTML = `<span>${data.description}</span>`;
        
     
         const category = document.createElement("div");
