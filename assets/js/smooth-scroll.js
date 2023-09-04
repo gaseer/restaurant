@@ -91,9 +91,6 @@ jQuery(".filters").on("click", function() {
     }, 1000);
 });
 
-document.querySelector(".filters li").addEventListener("click", onResize);
-document.querySelector(".filters li").addEventListener("click", onScroll);
-
 // Scroll to top
 
 const scrolltotop = document.querySelector(".scrolltop");
