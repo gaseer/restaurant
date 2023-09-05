@@ -11,14 +11,16 @@
 
 // Retrieve and display data from Firestore
   
-  const firebaseConfig = {
-    apiKey: "AIzaSyCsnP_IoAoOInL6YOgCqyH4rlbgtw7kEZ0",
-    authDomain: "restaurant-web-admin-b0fb8.firebaseapp.com",
-    projectId: "restaurant-web-admin-b0fb8",
-    storageBucket: "restaurant-web-admin-b0fb8.appspot.com",
-    messagingSenderId: "766755536649",
-    appId: "1:766755536649:web:22b86fcf72be1076691dd8"
-    };
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCCgEGxL4-RxbpqgNfKmizJOAOHCnpR52s",
+  authDomain: "tango-3bf0f.firebaseapp.com",
+  projectId: "tango-3bf0f",
+  storageBucket: "tango-3bf0f.appspot.com",
+  messagingSenderId: "778302565691",
+  appId: "1:778302565691:web:0ae5872488b53039f11b1e",
+  measurementId: "G-SVHFLG3BEY"
+};
     
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
@@ -126,7 +128,7 @@
 
 
     // Add this code after creating your buttons and text-display element
-const falafelButton = document.getElementById("FALFEEL");
+const falafelButton = document.getElementById("FALAFEL");
 const textDisplay = document.querySelector(".text-display");
 
 // Function to show the text when Falafel button is clicked
