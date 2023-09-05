@@ -1,16 +1,17 @@
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-  // import { getFirestore, collection, getDocs} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
-  import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+// import { getFirestore, collection, getDocs} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
 
-// Assuming you have previously initialized Firebase using the Firebase SDK script in your HTML
-// For example:
-// <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
-// <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
-
-// Replace with your Firebase app instance if you've already initialized Firebase
-
-// Retrieve and display data from Firestore
-  
+// // Your web app's Firebase configuration
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCCgEGxL4-RxbpqgNfKmizJOAOHCnpR52s",
+//   authDomain: "tango-3bf0f.firebaseapp.com",
+//   projectId: "tango-3bf0f",
+//   storageBucket: "tango-3bf0f.appspot.com",
+//   messagingSenderId: "778302565691",
+//   appId: "1:778302565691:web:0ae5872488b53039f11b1e",
+//   measurementId: "G-SVHFLG3BEY"
+// };
 
 const firebaseConfig = {
   apiKey: "AIzaSyCCgEGxL4-RxbpqgNfKmizJOAOHCnpR52s",
@@ -125,7 +126,6 @@ const firebaseConfig = {
         });
       }
     }
-
 
 
     // Add this code after creating your buttons and text-display element
