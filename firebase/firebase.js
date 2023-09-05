@@ -140,7 +140,7 @@ function showTextForFalafel() {
 falafelButton.addEventListener("click", showTextForFalafel);
 
 // Add click event listeners to all other buttons to hide the text
-const allButtonsExceptFalafel = document.querySelectorAll(".menu-btn:not(#FALFEEL)");
+const allButtonsExceptFalafel = document.querySelectorAll(".menu-btn:not(#FALAFEL)");
 
 allButtonsExceptFalafel.forEach((button) => {
     button.addEventListener("click", () => {
