@@ -127,6 +127,7 @@ const firebaseConfig = {
     }
 
 
+
     // Add this code after creating your buttons and text-display element
 const falafelButton = document.getElementById("FALAFEL");
 const textDisplay = document.querySelector(".text-display");
