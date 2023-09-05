@@ -4,7 +4,7 @@ font-family: 'Poppins', sans-serif; */
 
 .homeView {
     background-image: url(assets/tango_dish/shopImage.jpeg);
-    background-size: cover;
+    background-size: auto;
     background-position: center center;
     height: 100vh; /* Sets the height to 100% of the viewport height */
     width: 100%;   /* Sets the width to 100% */
