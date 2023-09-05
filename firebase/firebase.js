@@ -10,8 +10,6 @@ import { getFirestore, collection, getDocs, query, orderBy } from "https://www.g
 //   storageBucket: "tango-3bf0f.appspot.com",
 //   messagingSenderId: "778302565691",
 //   appId: "1:778302565691:web:0ae5872488b53039f11b1e",
-//   measurementId: "G-SVHFLG3BEY"
-// };
 
 const firebaseConfig = {
   apiKey: "AIzaSyCCgEGxL4-RxbpqgNfKmizJOAOHCnpR52s",
