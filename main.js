@@ -1,6 +1,7 @@
 $(document).ready(function ($) {
     "use strict";
 
+
     var book_table = new Swiper(".book-table-img-slider", {
         slidesPerView: 1,
         spaceBetween: 20,
