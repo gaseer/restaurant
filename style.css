@@ -6,8 +6,8 @@ font-family: 'Poppins', sans-serif; */
     background-image: url(assets/tango_dish/shopImage.jpeg);
     background-size: auto;
     background-position: center center;
-    height: 100vh; /* Sets the height to 100% of the viewport height */
-    width: 100%;   /* Sets the width to 100% */
+    height: 100vh;
+    width: 100%;  
 }
 
 .text-display{
@@ -672,6 +672,13 @@ ul {
 }
 
 @media (max-width: 575px) {
+    p {
+        display: none;
+        color: white;
+        font-size: 18px;
+        line-height: 30px;
+    
+    }
     .sec-btn {
         min-width: 120px;
         min-height: 58px;
@@ -692,8 +699,9 @@ ul {
         overflow: hidden;
         position: relative;
         z-index: 2;
-        padding: 6px 30px;
-        margin-top: 220px;
+        padding: 50px 30px;
+        margin-top: 820px;
+        margin-left: 110px;
     }
 
 
@@ -857,8 +865,9 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 30px;
+
 }
 
 .sec-btn {
@@ -2079,6 +2088,11 @@ p {
 }
 
 @media (max-width: 575px) {
+    /* #about{
+        margin-left: 50px;
+        margin-right: 50px;
+        font-size: 54px;
+    } */
     .food-item {height: 165px;
         margin-left: 50px;
         margin-right: 50px;
@@ -2152,6 +2166,7 @@ p {
         padding: 0 30px;
     }
     .h1-title {
+        display: none;
         font-size: 35px;
         line-height: 60px;
         margin-bottom: 20px;
