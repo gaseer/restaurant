@@ -4,7 +4,7 @@ font-family: 'Poppins', sans-serif; */
 
 .homeView {
     background-image: url(assets/tango_dish/shopImage.jpeg);
-    background-size: auto;
+    background-size: contain;
     background-position: center center;
     height: 100vh;
     width: 100%;  
