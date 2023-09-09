@@ -687,8 +687,8 @@ ul {
         /* box-shadow: 9px 9px 12px #b2b2b3, -9px -9px 12px #ffffff; */
         box-shadow: inset 9px 9px 12px #cccccc, inset -9px -9px 12px #ffffff;
         display: inline-flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: end;
+        align-items: end;
         border-radius: 30px;
         color: #0d0d25;
         text-transform: capitalize;
@@ -701,7 +701,7 @@ ul {
         position: relative;
         z-index: 2;
         padding: 50px 30px;
-        margin-top: 580px;
+        margin-top: 720px;
         margin-left: 100px;
     }
 
