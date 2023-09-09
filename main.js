@@ -1,7 +1,6 @@
 $(document).ready(function ($) {
     "use strict";
 
-
     var book_table = new Swiper(".book-table-img-slider", {
         slidesPerView: 1,
         spaceBetween: 20,
@@ -116,7 +115,8 @@ $(document).ready(function ($) {
     var parallaxInstance = new Parallax(scene);
 
 
-});
+});
+
 
 jQuery(window).on('load', function () {
     $('body').removeClass('body-fixed');
@@ -134,38 +134,38 @@ jQuery(window).on('load', function () {
     }
 
     // initial position on first === All 
-    gsap.set(".filter-active", {
-        x: targets[0].offsetLeft,
-        width: targets[0].offsetWidth
-    });
+    // gsap.set(".filter-active", {
+    //     x: targets[0].offsetLeft,
+    //     width: targets[0].offsetWidth
+    // });
 
-    function moveBar() {
-        if (this.index != activeTab) {
-            if (animation && animation.isActive()) {
-                animation.progress(1);
-            }
-            animation = gsap.timeline({
-                defaults: {
-                    duration: 0.4
-                }
-            });
-            old = activeTab;
-            activeTab = this.index;
-            animation.to(".filter-active", {
-                x: targets[activeTab].offsetLeft,
-                width: targets[activeTab].offsetWidth
-            });
+    // function moveBar() {
+    //     if (this.index != activeTab) {
+    //         if (animation && animation.isActive()) {
+    //             animation.progress(1);
+    //         }
+    //         animation = gsap.timeline({
+    //             defaults: {
+    //                 duration: 0.4
+    //             }
+    //         });
+    //         old = activeTab;
+    //         activeTab = this.index;
+    //         animation.to(".filter-active", {
+    //             x: targets[activeTab].offsetLeft,
+    //             width: targets[activeTab].offsetWidth
+    //         });
 
-            animation.to(targets[old], {
-                color: "#0d0d25",
-                ease: "none"
-            }, 0);
-            animation.to(targets[activeTab], {
-                color: "#fff",
-                ease: "none"
-            }, 0);
+    //         animation.to(targets[old], {
+    //             color: "#0d0d25",
+    //             ease: "none"
+    //         }, 0);
+    //         animation.to(targets[activeTab], {
+    //             color: "#fff",
+    //             ease: "none"
+    //         }, 0);
 
-        }
+    //     }
 
-    }
+    // }
 });
