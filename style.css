@@ -105,7 +105,7 @@ font-size: 12px
     margin-left: 170px;
     margin-right: 150px;
     height: 170px;
-    display: list-item;
+    display: grid;
     align-items: center;
     grid-template-columns: 20% auto;
     padding: 5px;
@@ -149,7 +149,7 @@ font-size: large
         backdrop-filter: blur(20px);
     } */
     .food-items {
-        display: list-item;
+        display: grid;
         /* grid-template-columsns: repeat(2, 1fr); */
         gap: 20px;
         padding-left:20px;
