@@ -5,11 +5,7 @@ import { getFirestore, collection, getDocs, query, orderBy } from "https://www.g
 // // Your web app's Firebase configuration
 // const firebaseConfig = {
 //   apiKey: "AIzaSyCCgEGxL4-RxbpqgNfKmizJOAOHCnpR52s",
-//   authDomain: "tango-3bf0f.firebaseapp.com",
-//   projectId: "tango-3bf0f",
-//   storageBucket: "tango-3bf0f.appspot.com",
-//   messagingSenderId: "778302565691",
-//   appId: "1:778302565691:web:0ae5872488b53039f11b1e",
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCCgEGxL4-RxbpqgNfKmizJOAOHCnpR52s",
