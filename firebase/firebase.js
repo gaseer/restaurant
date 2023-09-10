@@ -2,10 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebas
 // import { getFirestore, collection, getDocs} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
 import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
 
-// // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCCgEGxL4-RxbpqgNfKmizJOAOHCnpR52s",
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyCCgEGxL4-RxbpqgNfKmizJOAOHCnpR52s",
