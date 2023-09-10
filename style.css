@@ -56,7 +56,7 @@ font-size: 12px
 .menu-btns{
     padding: .8rem 0;
     padding-left: 50px;
-    padding-right: 30px;
+    padding-right: 40px;
     display: flex;
     justify-content: center;
 }
