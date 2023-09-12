@@ -2,15 +2,15 @@
 /* font-family: 'Playfair Display', serif;
 font-family: 'Poppins', sans-serif; */ 
 
-.partner-black {
+    .partner-black {
         color: rgb(238, 79, 79);
         font-weight: 600;
-}
+    }
 
-.partner-orange {
+    .partner-orange {
         color: orange;
         font-weight: 600;
-}
+    }
 
 .partner-green {
         color: rgb(80, 166, 80);
@@ -25,13 +25,6 @@ font-family: 'Poppins', sans-serif; */
     width: 100%;  
 }
 
-.about{
-    /* margin-top: 20px; */
-    padding-top: 20px;
-    line-height: 2px;
-    font-size: 18px;
-    
-}
 .text-display{
     display: none;  
     font-family: Arial, sans-serif; 
@@ -76,8 +69,6 @@ font-size: 12px
 }
 .menu-btns{
     padding: .8rem 0;
-    padding-left: 30px;
-    padding-right: 30px;
     display: flex;
     justify-content: center;
 }
@@ -116,7 +107,7 @@ font-size: 12px
     color:black;
 }
 .food-items {
-    display: grid;
+    display: list-item;
     /* grid-template-columns: repeat(auto-fit, minmax(300px, 2fr)); */
     gap: 20px;
   }
@@ -126,7 +117,7 @@ font-size: 12px
     margin-left: 170px;
     margin-right: 150px;
     height: 170px;
-    display: grid;
+    display: list-item;
     align-items: center;
     grid-template-columns: 20% auto;
     padding: 5px;
@@ -170,7 +161,7 @@ font-size: large
         backdrop-filter: blur(20px);
     } */
     .food-items {
-        /* display: list-item; */
+        display: list-item;
         /* grid-template-columsns: repeat(2, 1fr); */
         gap: 20px;
         padding-left:20px;
@@ -240,23 +231,22 @@ font-size: large
   }
   
   .food-img {
-    width: 130px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
     flex-shrink: 0;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
   }
   
   .food-img img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
   }
   
   .food-content {
     flex-grow: 1;
     padding: 5px;
-    padding-left: 15px;  
   }
   
   .food-name {
@@ -725,7 +715,7 @@ ul {
         position: relative;
         z-index: 2;
         padding: 50px 30px;
-        margin-top: 530px;
+        margin-top: 720px;
         margin-left: 100px;
     }
 
@@ -864,11 +854,11 @@ ul {
 }
 
 .h1-title {
-    font-size: 70px;
-    line-height: 100px;
+    font-size: 90px;
+    line-height: 108px;
     text-transform: capitalize;
-    margin-bottom: 10px;
-    margin-top: 1px;
+    margin-bottom: 25px;
+    margin-top: 40px;
     color: #ffffff;
     font-weight: 900;
 }
@@ -2133,7 +2123,6 @@ p {
         margin: 1.2rem 0;
         box-shadow: 0 0 16px -4px rgba(0, 0, 0, 0.75);
         animation: fadeIn 2s;
-        padding-left: 15px;
       }
 
       .food-name {
