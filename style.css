@@ -231,17 +231,17 @@ font-size: large
   }
   
   .food-img {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 140px;
     flex-shrink: 0;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
   }
   
   .food-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
   }
   
   .food-content {
