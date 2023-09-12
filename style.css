@@ -2,6 +2,21 @@
 /* font-family: 'Playfair Display', serif;
 font-family: 'Poppins', sans-serif; */ 
 
+.partner-black {
+        color: rgb(238, 79, 79);
+        font-weight: 600;
+}
+
+.partner-orange {
+        color: orange;
+        font-weight: 600;
+}
+
+.partner-green {
+        color: rgb(80, 166, 80);
+        font-weight: 600; /* semi-bold, you can adjust this value as needed */
+}
+
 .homeView {
     background-image: url(assets/tango_dish/shopImage.jpeg);
     background-size: 100% 100%;
